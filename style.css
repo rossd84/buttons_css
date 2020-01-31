@@ -1,0 +1,251 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.main {
+    display: flex;
+    flex-direction: column;
+    width:100vw;
+    justify-content: center;
+    text-align: center;
+    background: #111;
+    color: #eee;
+}
+.wrapper {
+    display: grid;
+    margin: auto;
+    grid-template-columns: 200px 200px 200px;
+}
+
+.button-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    height: 150px;
+    overflow: hidden;
+}
+
+.button {
+    width: 125px;
+    height: 50px;
+    cursor: pointer;
+    background: transparent;
+    color: #eee;
+}
+
+.button:focus {
+    outline: none;
+}
+
+.pulse {
+    background-image: linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%);
+    border-radius: 10px;
+    animation: pulse 2s ease-in-out infinite;
+    color: #19252b;
+}
+
+.pulse:hover,
+.pulse:focus {
+    animation-duration: .5s;
+    transform: scale(1.05);
+    font-weight: bold;
+    transition-duration: 200ms;
+}
+
+.pulse:active {
+    transform: scale(1);
+}
+
+@keyframes pulse {
+    0%, 100% {
+        box-shadow: 0 0 0 0 rgba(71, 177, 39, 0);
+    }
+    50% {
+        box-shadow: 0 0 0 10px #8fd3f499;
+    }
+}
+
+.shake {
+    background-image: linear-gradient(to right, #fa709a 0%, #fee140 100%);
+    animation: shake 5s ease-in-out infinite;
+}
+
+.shake:hover,
+.shake:focus {
+    animation: shake1 1s linear infinite;
+}
+
+@keyframes shake {
+    0% {
+        transform: rotate(0);
+    }
+    10% {
+        transform: rotate(-10deg);
+    }
+    30% {
+        transform: rotate(10deg);
+    }
+    45% {
+        transform: rotate(-5deg);
+    }
+    60% {
+        transform: rotate(5deg);
+    }
+    70% {
+        transform: rotate(-2deg);
+    }
+    75% {
+        transform: rotate(0);
+    }
+}
+
+@keyframes shake1 {
+    0%, 50%, 100% {
+        transform: rotate(0);
+    }
+    25% {
+        transform: rotate(5deg);
+    }
+    75% {
+        transform: rotate(-5deg);
+    }
+}
+
+.bounce {
+    background-image: linear-gradient(to top, #fddb92 0%, #d1fdff 100%);
+    color: #302819;
+    animation: bounce 4.5s ease-out infinite;
+}
+
+.bounce:hover,
+.bounce:focus {
+    animation: bounce1 0.8s ease-in-out infinite;
+}
+
+@keyframes bounce {
+    0%, 15%, 25%, 32%{
+        transform: translateY(0);
+    }
+    10% {
+        transform: translateY(-20px);
+    }
+    20% {
+        transform: translateY(-10px);
+    }
+    28% {
+        transform: translateY(-5px);
+    }
+}
+
+@keyframes bounce1 {
+    0%, 100% {
+        transfrom: scale(1.05);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+}
+
+.raise {
+    background-image: linear-gradient(to right, #b8cbb8 0%, #b8cbb8 0%, #b465da 0%, #cf6cc9 33%, #ee609c 66%, #ee609c 100%);
+    color: #263d30;
+    border-radius: 5px;
+    transition-duration: 200ms;
+}
+
+.raise:hover,
+.raise:focus {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 10px -10px #ee609c;
+}
+
+.offset {
+    box-shadow: 
+        5px 5px 0 0 rgb(110, 40, 151),
+        inset 5px 5px 0 0 rgb(110, 40, 151);
+    border: 2px solid rgb(144, 97, 230);
+    transition-duration: 0.5s;
+}
+
+.offset:hover,
+.offset:focus {
+    box-shadow: 
+        0 0 0 0 #000,
+        inset 125px 50px 0 rgb(144, 97, 230);
+    transition-duration: 0.5s;
+}
+
+.bubble {
+    border: none;
+    border-radius: 50%;
+    background-image: radial-gradient(#37ecba,  #72afd3);
+    box-shadow: inset 0 0 15px 5px #092b21;
+    color: #092b21;
+}
+
+.bubble:active {
+    background-image: radial-gradient(#25a883,  #4d778f);
+    box-shadow: inset 0 0 15px 5px #27b68b;
+}
+
+.slide {
+    background-image: linear-gradient(to top, #00c6fb 0%, #005bea 100%);
+    border: 1px solid #aaa;
+    transition-duration: 0.5s;
+}
+
+.slide:hover,
+.slide:focus {
+    box-shadow: inset 200px 0 0 0 #07275a;
+    border: 2px solid #eee;
+}
+
+.backlight {
+    border: 2px solid rgb(145, 34, 58);
+    border-radius: 5px;
+    background-color: rgb(190, 45, 76);
+    transition-duration: 0.5s;
+}
+
+.backlight:hover,
+.backlight:focus {
+    border: none;
+    background-color: rgba(190, 45, 76, 0);
+    box-shadow: 
+        0 0 8px 2px rgb(190, 45, 76),
+        inset 0 0 3px 1px rgb(190, 45, 76);
+    color: rgb(190, 45, 76);
+}
+
+.flyoff {
+    border-radius: 10px;
+    border: none;
+    background-image: linear-gradient(to right, #f83600 0%, #f9d423 100%);
+}
+
+.flyoff:active,
+.flyoff:focus {
+    animation: flyoff 2s ease-in 1;
+}
+
+@keyframes flyoff {
+    0%, 100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+    15% {
+        transform: translateX(-10px);
+    }
+    50% {
+        transform: translateX(300px);
+        opacity: 0;
+    }
+    51% {
+        opacity: 0;
+        transform: translateX(-300px);
+    }
+    /* 50%, 75% {
+    } */
+}
